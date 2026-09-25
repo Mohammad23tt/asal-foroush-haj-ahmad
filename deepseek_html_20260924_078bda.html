@@ -1,0 +1,3271 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#f5a623">
+  <title>فروشگاه حاج احمد | عسل طبیعی و ارگانیک</title>
+
+  <link href="https://cdn.jsdelivr.net/gh/rastikerdar/vazirmatn@v33.003/Vazirmatn-font-face.css" rel="stylesheet">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🍯</text></svg>">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.rtl.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+
+  <style>
+    /* ============================================================
+       1️⃣ متغیرهای طراحی
+       ============================================================ */
+    :root {
+      --honey: #f5a623;
+      --honey-dark: #d4880f;
+      --honey-light: #ffc857;
+      --brown: #3d1f0a;
+      --brown-light: #6b4423;
+      --cream: #fff9f0;
+      --text: #2d1a0a;
+      --bg: #fffdf8;
+      --card-bg: #ffffff;
+      --green: #27ae60;
+      --bale: #00b4d8;
+      --bale-dark: #0077b6;
+      --danger: #e74c3c;
+
+      --space-1: 4px;
+      --space-2: 8px;
+      --space-3: 12px;
+      --space-4: 16px;
+      --space-5: 24px;
+      --space-6: 32px;
+      --space-7: 48px;
+      --space-8: 64px;
+
+      --shadow: 0 8px 30px rgba(61,31,10,.08);
+      --shadow-hover: 0 20px 50px rgba(61,31,10,.15);
+      --radius: 20px;
+      --radius-sm: 12px;
+      --radius-lg: 28px;
+      --transition: all .35s cubic-bezier(.25,.8,.25,1);
+
+      /* 🎨 فیلتر رنگی برای لوگوی بله (عسلی #f5a623) */
+      --bale-honey-filter: brightness(0) saturate(100%) invert(67%) sepia(58%) saturate(1400%) hue-rotate(1deg) brightness(97%) contrast(94%);
+    }
+
+    [data-theme="dark"] {
+      --brown: #f5e9d8;
+      --brown-light: #d4c4a8;
+      --cream: #1a1208;
+      --text: #f0e6d6;
+      --bg: #0f0a04;
+      --card-bg: #1a1208;
+      --shadow: 0 8px 30px rgba(0,0,0,.4);
+      --shadow-hover: 0 20px 50px rgba(0,0,0,.5);
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Vazirmatn', Tahoma, Arial, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.9;
+      transition: background .4s, color .4s;
+      overflow-x: hidden;
+    }
+
+    a { text-decoration: none; color: inherit; }
+
+    ::-webkit-scrollbar { width: 10px; }
+    ::-webkit-scrollbar-track { background: var(--cream); }
+    ::-webkit-scrollbar-thumb { background: var(--honey); border-radius: 10px; }
+
+    /* ============================================================
+       2️⃣ 🌟 کلاس ویژه لوگوی بله در کادر سفید عسلی
+       ============================================================ */
+    .bale-icon-box {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      background: #fff;
+      border-radius: 10px;
+      padding: 4px;
+      flex-shrink: 0;
+      line-height: 1;
+      box-shadow:
+        0 2px 6px rgba(61,31,10,.1),
+        inset 0 0 0 1px rgba(61,31,10,.06);
+      transition: var(--transition);
+      overflow: hidden;
+    }
+
+    .bale-icon-box img,
+    .bale-icon-box svg {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      display: block;
+      filter: var(--bale-honey-filter);
+      transition: var(--transition);
+    }
+
+    /* اندازه‌ها */
+    .bale-icon-box.size-xs { width: 24px; height: 24px; padding: 3px; border-radius: 7px; }
+    .bale-icon-box.size-sm { width: 28px; height: 28px; padding: 4px; border-radius: 8px; }
+    .bale-icon-box.size-md { width: 34px; height: 34px; padding: 5px; border-radius: 10px; }
+    .bale-icon-box.size-lg { width: 44px; height: 44px; padding: 7px; border-radius: 12px; }
+    .bale-icon-box.size-xl { width: 52px; height: 52px; padding: 8px; border-radius: 14px; }
+
+    /* افکت hover */
+    a:hover > .bale-icon-box,
+    button:hover > .bale-icon-box,
+    .contact-info-card:hover .bale-icon-box,
+    .footer-social a:hover .bale-icon-box {
+      transform: scale(1.08);
+      box-shadow:
+        0 6px 15px rgba(245,166,35,.3),
+        inset 0 0 0 1px rgba(245,166,35,.3);
+    }
+
+    /* در حالت تاریک، کادر سفید حتماً سفید می‌ماند */
+    [data-theme="dark"] .bale-icon-box {
+      background: #ffffff;
+      box-shadow:
+        0 4px 12px rgba(0,0,0,.35),
+        inset 0 0 0 1px rgba(255,255,255,.1);
+    }
+
+    /* ============================================================
+       3️⃣ آیکون‌های عمومی
+       ============================================================ */
+    .icon {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      line-height: 1;
+      flex-shrink: 0;
+      vertical-align: middle;
+    }
+    .icon svg {
+      width: 100%;
+      height: 100%;
+      fill: none;
+      stroke: currentColor;
+      stroke-width: 1.75;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+
+    /* ============================================================
+       4️⃣ هدر
+       ============================================================ */
+    .site-header {
+      position: fixed;
+      top: 0; right: 0; left: 0;
+      z-index: 1000;
+      background: rgba(255,253,248,.88);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border-bottom: 1px solid rgba(61,31,10,.06);
+      transition: var(--transition);
+    }
+    [data-theme="dark"] .site-header {
+      background: rgba(15,10,4,.88);
+      border-bottom-color: rgba(245,233,216,.08);
+    }
+    .site-header.scrolled { box-shadow: 0 4px 20px rgba(0,0,0,.08); }
+    .site-header .nav-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: var(--space-3) 0;
+      min-height: 72px;
+    }
+
+    .logo {
+      display: inline-flex;
+      align-items: center;
+      gap: var(--space-2);
+      font-size: 1.5rem;
+      font-weight: 900;
+      color: var(--brown);
+      transition: var(--transition);
+      line-height: 1;
+    }
+    .logo:hover { transform: scale(1.03); }
+    .logo-mark {
+      width: 44px;
+      height: 44px;
+      border-radius: 12px;
+      background: linear-gradient(135deg, var(--honey), var(--honey-dark));
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      box-shadow: 0 6px 18px rgba(245,166,35,.4);
+      transition: var(--transition);
+    }
+    .logo:hover .logo-mark { transform: rotate(-8deg) scale(1.05); }
+    .logo-mark svg { width: 26px; height: 26px; }
+    .logo-text { display: inline-flex; flex-direction: column; line-height: 1.1; }
+    .logo-text strong { font-size: 1.15rem; font-weight: 900; }
+    .logo-text small {
+      font-size: .65rem;
+      font-weight: 600;
+      color: var(--honey-dark);
+      letter-spacing: 1.5px;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: var(--space-5);
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+    .nav-links a {
+      font-weight: 600;
+      color: var(--brown-light);
+      position: relative;
+      transition: var(--transition);
+      padding: var(--space-1) 0;
+      display: inline-flex;
+      align-items: center;
+      font-size: .95rem;
+    }
+    .nav-links a::after {
+      content: '';
+      position: absolute;
+      bottom: 0; right: 0;
+      width: 0; height: 2px;
+      background: var(--honey);
+      transition: width .3s ease;
+      border-radius: 2px;
+    }
+    .nav-links a:hover { color: var(--honey-dark); }
+    .nav-links a:hover::after { width: 100%; }
+
+    .nav-actions { display: flex; align-items: center; gap: var(--space-2); }
+
+    .icon-btn {
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      background: transparent;
+      border: 1.5px solid var(--honey);
+      color: var(--honey-dark);
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      transition: var(--transition);
+      padding: 0;
+    }
+    .icon-btn:hover {
+      background: var(--honey);
+      color: #fff;
+      transform: translateY(-2px) rotate(15deg);
+    }
+    .icon-btn svg { width: 22px; height: 22px; }
+
+    .cart-btn {
+      background: var(--honey);
+      border: none;
+      padding: 0 var(--space-4);
+      height: 44px;
+      border-radius: 50px;
+      font-weight: 700;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: var(--space-2);
+      color: var(--brown);
+      font-family: inherit;
+      transition: var(--transition);
+      font-size: .9rem;
+      box-shadow: 0 4px 15px rgba(245,166,35,.3);
+    }
+    .cart-btn svg { width: 20px; height: 20px; }
+    .cart-btn:hover {
+      background: var(--honey-dark);
+      color: #fff;
+      transform: translateY(-2px);
+    }
+    .cart-btn .badge {
+      background: var(--brown);
+      color: #fff;
+      border-radius: 50%;
+      width: 22px;
+      height: 22px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-size: .7rem;
+      font-weight: 800;
+    }
+    .cart-btn:hover .badge { background: #fff; color: var(--honey-dark); }
+
+    .menu-toggle {
+      display: none;
+      background: transparent;
+      border: none;
+      color: var(--brown);
+      cursor: pointer;
+      width: 44px;
+      height: 44px;
+      align-items: center;
+      justify-content: center;
+      padding: 0;
+    }
+    .menu-toggle svg { width: 26px; height: 26px; }
+
+    /* ============================================================
+       5️⃣ دکمه‌ها
+       ============================================================ */
+    .btn-primary-honey,
+    .btn-outline-honey,
+    .btn-bale,
+    .btn-white {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: var(--space-2);
+      padding: 0 var(--space-6);
+      height: 52px;
+      border-radius: 50px;
+      font-weight: 700;
+      cursor: pointer;
+      font-family: inherit;
+      font-size: .95rem;
+      transition: var(--transition);
+      white-space: nowrap;
+      border: none;
+      line-height: 1;
+    }
+    .btn-primary-honey svg,
+    .btn-outline-honey svg,
+    .btn-white svg { width: 20px; height: 20px; }
+
+    .btn-primary-honey {
+      background: linear-gradient(135deg, var(--honey), var(--honey-dark));
+      color: #fff;
+      box-shadow: 0 8px 25px rgba(245,166,35,.35);
+      position: relative;
+      overflow: hidden;
+    }
+    .btn-primary-honey::before {
+      content: '';
+      position: absolute;
+      top: 0; left: -100%;
+      width: 100%; height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,.35), transparent);
+      transition: left .7s;
+    }
+    .btn-primary-honey:hover::before { left: 100%; }
+    .btn-primary-honey:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 14px 35px rgba(245,166,35,.5);
+    }
+
+    .btn-outline-honey {
+      background: transparent;
+      border: 2px solid var(--honey-dark);
+      color: var(--honey-dark);
+    }
+    .btn-outline-honey:hover {
+      background: var(--honey-dark);
+      color: #fff;
+      transform: translateY(-3px);
+    }
+
+    .btn-bale {
+      background: linear-gradient(135deg, var(--honey), var(--honey-dark));
+      color: #fff;
+      box-shadow: 0 8px 25px rgba(245,166,35,.35);
+    }
+    .btn-bale:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 14px 35px rgba(245,166,35,.5);
+    }
+    /* در دکمه بله، کادر سفید با سایه ملایم */
+    .btn-bale .bale-icon-box {
+      box-shadow: 0 2px 8px rgba(0,0,0,.15);
+    }
+
+    .btn-white {
+      background: #fff;
+      color: var(--honey-dark);
+    }
+    .btn-white:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 14px 30px rgba(0,0,0,.15);
+    }
+
+    /* ============================================================
+       6️⃣ هیرو
+       ============================================================ */
+    .hero {
+      padding: 140px 0 100px;
+      position: relative;
+      overflow: hidden;
+      background:
+        radial-gradient(ellipse at 80% 20%, rgba(245,166,35,.15), transparent 50%),
+        radial-gradient(ellipse at 20% 80%, rgba(255,200,87,.1), transparent 50%),
+        var(--bg);
+    }
+    .hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='56' height='100' viewBox='0 0 56 100'%3E%3Cpath d='M28 66L0 50V16L28 0l28 16v34L28 66zm0-2l26-15V17L28 2 2 17v32l26 15z' fill='%23f5a623' fill-opacity='0.04'/%3E%3C/svg%3E");
+      pointer-events: none;
+    }
+
+    .hero-content { position: relative; z-index: 2; }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: var(--space-2);
+      background: rgba(245,166,35,.12);
+      border: 1px solid rgba(245,166,35,.25);
+      color: var(--honey-dark);
+      padding: 0 var(--space-4);
+      height: 36px;
+      border-radius: 50px;
+      font-weight: 700;
+      font-size: .85rem;
+      margin-bottom: var(--space-4);
+    }
+    .hero-badge .dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--green);
+      box-shadow: 0 0 0 4px rgba(39,174,96,.2);
+      animation: dotPulse 2s ease-in-out infinite;
+    }
+    @keyframes dotPulse {
+      0%, 100% { box-shadow: 0 0 0 4px rgba(39,174,96,.2); }
+      50% { box-shadow: 0 0 0 8px rgba(39,174,96,.05); }
+    }
+
+    .hero-title {
+      font-size: clamp(2rem, 5vw, 3.2rem);
+      font-weight: 900;
+      line-height: 1.35;
+      color: var(--brown);
+      margin-bottom: var(--space-4);
+    }
+    .hero-title .highlight {
+      color: var(--honey-dark);
+      position: relative;
+      display: inline-block;
+    }
+    .hero-title .highlight::after {
+      content: '';
+      position: absolute;
+      bottom: 4px; right: 0;
+      width: 100%; height: 10px;
+      background: rgba(245,166,35,.25);
+      border-radius: 5px;
+      z-index: -1;
+    }
+
+    .hero-desc {
+      font-size: 1.1rem;
+      color: var(--brown-light);
+      margin-bottom: var(--space-5);
+      max-width: 520px;
+      line-height: 2;
+    }
+
+    .hero-highlights {
+      display: flex;
+      flex-wrap: wrap;
+      gap: var(--space-2);
+      margin-bottom: var(--space-5);
+    }
+    .hero-highlight-item {
+      display: inline-flex;
+      align-items: center;
+      gap: var(--space-2);
+      background: var(--card-bg);
+      border: 1px solid rgba(61,31,10,.06);
+      padding: 0 var(--space-4);
+      height: 40px;
+      border-radius: 50px;
+      font-size: .85rem;
+      font-weight: 700;
+      color: var(--brown);
+      box-shadow: 0 4px 12px rgba(61,31,10,.04);
+      transition: var(--transition);
+    }
+    .hero-highlight-item:hover {
+      transform: translateY(-2px);
+      border-color: var(--honey);
+      color: var(--honey-dark);
+    }
+    .hero-highlight-item svg {
+      width: 18px;
+      height: 18px;
+      color: var(--honey-dark);
+    }
+
+    .hero-actions {
+      display: flex;
+      gap: var(--space-3);
+      flex-wrap: wrap;
+    }
+
+    .hero-visual {
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 480px;
+    }
+
+    .hero-image {
+      width: 100%;
+      max-width: 480px;
+      border-radius: var(--radius-lg);
+      box-shadow: 0 30px 60px rgba(61,31,10,.18);
+      transition: var(--transition);
+      position: relative;
+      z-index: 2;
+      animation: float 6s ease-in-out infinite;
+    }
+    .hero-image:hover { transform: scale(1.02) translateY(-10px); }
+    @keyframes float {
+      0%, 100% { transform: translateY(0) rotate(0deg); }
+      50% { transform: translateY(-18px) rotate(1.5deg); }
+    }
+
+    .floating-bee {
+      position: absolute;
+      top: 8%;
+      right: 5%;
+      z-index: 5;
+      animation: beeFloat 8s ease-in-out infinite;
+      filter: drop-shadow(0 8px 15px rgba(245,166,35,.4));
+    }
+    .floating-bee svg { width: 60px; height: 60px; }
+    @keyframes beeFloat {
+      0% { transform: translate(0, 0) rotate(-5deg); }
+      25% { transform: translate(-15px, -10px) rotate(5deg); }
+      50% { transform: translate(-25px, -25px) rotate(-3deg); }
+      75% { transform: translate(-10px, -15px) rotate(8deg); }
+      100% { transform: translate(0, 0) rotate(-5deg); }
+    }
+
+    .deco-circle {
+      position: absolute;
+      border-radius: 50%;
+      border: 2px dashed rgba(245,166,35,.35);
+      z-index: 1;
+    }
+    .deco-circle.c1 {
+      width: 200px; height: 200px;
+      top: 15%; right: 18%;
+      animation: spin 25s linear infinite;
+    }
+    .deco-circle.c2 {
+      width: 130px; height: 130px;
+      bottom: 12%; left: 15%;
+      animation: spin 18s linear infinite reverse;
+    }
+    @keyframes spin {
+      from { transform: rotate(0deg); }
+      to { transform: rotate(360deg); }
+    }
+
+    /* ============================================================
+       7️⃣ نوار ارسال رایگان
+       ============================================================ */
+    .free-shipping-bar {
+      background: linear-gradient(135deg, var(--green), #1e8449);
+      color: #fff;
+      padding: var(--space-4) 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: var(--space-3);
+      font-weight: 800;
+      font-size: 1rem;
+      position: relative;
+      overflow: hidden;
+    }
+    .free-shipping-bar svg { width: 24px; height: 24px; }
+    .free-shipping-bar::before {
+      content: '';
+      position: absolute;
+      top: 0; left: -100%;
+      width: 100%; height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,.25), transparent);
+      animation: shine 3.5s infinite;
+    }
+    @keyframes shine {
+      to { left: 100%; }
+    }
+
+    /* ============================================================
+       8️⃣ شمارنده
+       ============================================================ */
+    .counter-section {
+      padding: var(--space-8) 0;
+      background: linear-gradient(135deg, var(--brown), #2a1408);
+      color: #fff;
+      position: relative;
+      overflow: hidden;
+    }
+    .counter-section::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='56' height='100' viewBox='0 0 56 100'%3E%3Cpath d='M28 66L0 50V16L28 0l28 16v34L28 66zm0-2l26-15V17L28 2 2 17v32l26 15z' fill='%23f5a623' fill-opacity='0.06'/%3E%3C/svg%3E");
+      pointer-events: none;
+    }
+    .counter-item {
+      text-align: center;
+      position: relative;
+      z-index: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: var(--space-4) 0;
+    }
+    .counter-icon-wrapper {
+      width: 72px;
+      height: 72px;
+      border-radius: 20px;
+      background: rgba(245,166,35,.12);
+      border: 1px solid rgba(245,166,35,.25);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--honey);
+      margin-bottom: var(--space-3);
+      transition: var(--transition);
+    }
+    .counter-icon-wrapper svg { width: 34px; height: 34px; }
+    .counter-item:hover .counter-icon-wrapper {
+      background: linear-gradient(135deg, var(--honey), var(--honey-dark));
+      color: #fff;
+      transform: translateY(-4px) rotate(-5deg);
+      box-shadow: 0 15px 30px rgba(245,166,35,.4);
+    }
+    .counter-num {
+      font-size: 2.4rem;
+      font-weight: 900;
+      color: var(--honey);
+      display: block;
+      line-height: 1.1;
+    }
+    .counter-label {
+      font-size: .9rem;
+      color: rgba(255,255,255,.7);
+      margin-top: var(--space-1);
+    }
+
+    /* ============================================================
+       9️⃣ بخش‌ها
+       ============================================================ */
+    .section { padding: var(--space-8) 0; }
+    .section-header {
+      text-align: center;
+      margin-bottom: var(--space-7);
+    }
+    .section-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: var(--space-2);
+      background: rgba(245,166,35,.12);
+      color: var(--honey-dark);
+      padding: 0 var(--space-4);
+      height: 36px;
+      border-radius: 50px;
+      font-size: .85rem;
+      font-weight: 700;
+      margin-bottom: var(--space-3);
+    }
+    .section-badge svg { width: 18px; height: 18px; }
+    .section-header h2 {
+      font-size: clamp(1.6rem, 3.5vw, 2.2rem);
+      font-weight: 900;
+      color: var(--brown);
+      margin-bottom: var(--space-2);
+    }
+    .section-header p {
+      color: var(--brown-light);
+      max-width: 550px;
+      margin: 0 auto;
+    }
+
+    /* ============================================================
+       🔟 کارت ویژگی
+       ============================================================ */
+    .feature-card {
+      background: var(--card-bg);
+      border-radius: var(--radius);
+      padding: var(--space-6) var(--space-5);
+      text-align: center;
+      box-shadow: var(--shadow);
+      transition: var(--transition);
+      border: 1px solid rgba(61,31,10,.04);
+      height: 100%;
+      position: relative;
+      overflow: hidden;
+    }
+    .feature-card::before {
+      content: '';
+      position: absolute;
+      top: 0; right: 0;
+      width: 100%; height: 4px;
+      background: linear-gradient(90deg, var(--honey), var(--honey-dark));
+      transform: scaleX(0);
+      transform-origin: right;
+      transition: transform .4s ease;
+    }
+    .feature-card:hover::before { transform: scaleX(1); }
+    .feature-card:hover {
+      transform: translateY(-8px);
+      box-shadow: var(--shadow-hover);
+    }
+    .feature-icon-wrapper {
+      width: 72px;
+      height: 72px;
+      border-radius: 20px;
+      background: linear-gradient(135deg, rgba(245,166,35,.15), rgba(212,136,15,.08));
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--honey-dark);
+      margin: 0 auto var(--space-4);
+      transition: var(--transition);
+    }
+    .feature-icon-wrapper svg { width: 34px; height: 34px; }
+    .feature-card:hover .feature-icon-wrapper {
+      transform: scale(1.08) rotate(-5deg);
+      background: linear-gradient(135deg, var(--honey), var(--honey-dark));
+      color: #fff;
+      box-shadow: 0 12px 25px rgba(245,166,35,.4);
+    }
+    .feature-card h5 {
+      font-weight: 800;
+      color: var(--brown);
+      margin-bottom: var(--space-2);
+      font-size: 1.05rem;
+    }
+    .feature-card p {
+      color: var(--brown-light);
+      font-size: .9rem;
+      margin: 0;
+      line-height: 1.8;
+    }
+
+    /* ============================================================
+       1️⃣1️⃣ فیلتر محصولات
+       ============================================================ */
+    .product-filters {
+      display: flex;
+      justify-content: center;
+      gap: var(--space-2);
+      margin-bottom: var(--space-6);
+      flex-wrap: wrap;
+    }
+    .filter-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: var(--space-2);
+      padding: 0 var(--space-5);
+      height: 44px;
+      border-radius: 50px;
+      border: 1.5px solid rgba(61,31,10,.12);
+      background: var(--card-bg);
+      cursor: pointer;
+      font-family: inherit;
+      font-weight: 700;
+      color: var(--brown-light);
+      transition: var(--transition);
+      font-size: .9rem;
+    }
+    .filter-btn svg { width: 18px; height: 18px; }
+    .filter-btn:hover {
+      border-color: var(--honey);
+      color: var(--honey-dark);
+    }
+    .filter-btn.active {
+      background: linear-gradient(135deg, var(--honey), var(--honey-dark));
+      border-color: transparent;
+      color: #fff;
+      box-shadow: 0 6px 20px rgba(245,166,35,.35);
+    }
+
+    /* ============================================================
+       1️⃣2️⃣ کارت محصول
+       ============================================================ */
+    .product-card {
+      background: var(--card-bg);
+      border-radius: var(--radius);
+      padding: var(--space-5) var(--space-4);
+      text-align: center;
+      box-shadow: var(--shadow);
+      transition: var(--transition);
+      border: 1px solid rgba(61,31,10,.04);
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+      position: relative;
+      overflow: hidden;
+    }
+    .product-card:hover {
+      transform: translateY(-10px);
+      box-shadow: var(--shadow-hover);
+    }
+    .product-badge {
+      position: absolute;
+      top: var(--space-4);
+      right: var(--space-4);
+      background: linear-gradient(135deg, var(--honey), var(--honey-dark));
+      color: #fff;
+      padding: 0 var(--space-3);
+      height: 26px;
+      border-radius: 50px;
+      font-size: .7rem;
+      font-weight: 700;
+      z-index: 2;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .product-badge.wax {
+      background: linear-gradient(135deg, #a0522d, #6d3712);
+    }
+
+    .product-image-wrapper {
+      width: 100%;
+      height: 180px;
+      border-radius: var(--radius-sm);
+      margin-bottom: var(--space-4);
+      background: linear-gradient(135deg, rgba(245,166,35,.08), rgba(212,136,15,.04));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      transition: var(--transition);
+    }
+    .product-card:hover .product-image-wrapper {
+      background: linear-gradient(135deg, rgba(245,166,35,.15), rgba(212,136,15,.08));
+    }
+    .product-svg-icon {
+      width: 90px;
+      height: 90px;
+      color: var(--honey-dark);
+      transition: var(--transition);
+    }
+    .product-card:hover .product-svg-icon {
+      transform: scale(1.1) rotate(-5deg);
+    }
+
+    .product-card h5 {
+      font-weight: 800;
+      color: var(--brown);
+      margin-bottom: var(--space-2);
+      font-size: 1.05rem;
+    }
+
+    .product-specs {
+      background: rgba(39,174,96,.08);
+      border: 1px dashed rgba(39,174,96,.3);
+      border-radius: var(--radius-sm);
+      padding: 0 var(--space-3);
+      height: 34px;
+      margin-bottom: var(--space-3);
+      font-size: .82rem;
+      font-weight: 700;
+      color: var(--green);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: var(--space-1);
+      align-self: center;
+    }
+    .product-specs svg { width: 16px; height: 16px; }
+
+    .product-desc {
+      font-size: .88rem;
+      color: var(--brown-light);
+      margin-bottom: var(--space-4);
+      flex: 1;
+      line-height: 1.7;
+    }
+    .product-price {
+      font-weight: 900;
+      color: var(--honey-dark);
+      font-size: 1.15rem;
+      margin-bottom: var(--space-4);
+    }
+    .product-price small {
+      font-size: .75rem;
+      font-weight: 400;
+      color: var(--brown-light);
+    }
+    .btn-add-cart {
+      width: 100%;
+      height: 46px;
+      padding: 0 var(--space-3);
+      border-radius: var(--radius-sm);
+      border: none;
+      background: var(--brown);
+      color: #fff;
+      font-family: inherit;
+      font-weight: 700;
+      cursor: pointer;
+      transition: var(--transition);
+      font-size: .9rem;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: var(--space-2);
+    }
+    .btn-add-cart svg { width: 18px; height: 18px; }
+    .btn-add-cart:hover {
+      background: linear-gradient(135deg, var(--honey), var(--honey-dark));
+      transform: translateY(-2px);
+      box-shadow: 0 8px 20px rgba(245,166,35,.35);
+    }
+
+    /* ============================================================
+       1️⃣3️⃣ پشت صحنه سفارش
+       ============================================================ */
+    .order-story-section {
+      padding: var(--space-8) 0;
+      background: linear-gradient(180deg, var(--cream) 0%, var(--bg) 100%);
+    }
+    .order-story-card {
+      background: var(--card-bg);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      transition: var(--transition);
+      border: 1px solid rgba(61,31,10,.04);
+      height: 100%;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+    }
+    .order-story-card:hover {
+      transform: translateY(-10px);
+      box-shadow: var(--shadow-hover);
+    }
+    .order-story-img-wrapper {
+      position: relative;
+      overflow: hidden;
+      height: 240px;
+      cursor: pointer;
+    }
+    .order-story-img-wrapper img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: var(--transition);
+    }
+    .order-story-card:hover .order-story-img-wrapper img {
+      transform: scale(1.08);
+    }
+    .order-story-step-badge {
+      position: absolute;
+      top: var(--space-4);
+      right: var(--space-4);
+      background: linear-gradient(135deg, var(--honey), var(--honey-dark));
+      color: #fff;
+      padding: 0 var(--space-4);
+      height: 32px;
+      border-radius: 50px;
+      font-size: .78rem;
+      font-weight: 800;
+      z-index: 2;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: var(--space-1);
+      box-shadow: 0 4px 15px rgba(245,166,35,.4);
+    }
+    .order-story-step-badge svg { width: 14px; height: 14px; }
+    .order-story-body {
+      padding: var(--space-5);
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+    }
+    .order-story-body h5 {
+      font-weight: 800;
+      color: var(--brown);
+      margin-bottom: var(--space-2);
+      font-size: 1.05rem;
+      display: inline-flex;
+      align-items: center;
+      gap: var(--space-2);
+    }
+    .order-story-body h5 svg {
+      width: 22px;
+      height: 22px;
+      color: var(--honey-dark);
+    }
+    .order-story-body p {
+      color: var(--brown-light);
+      font-size: .92rem;
+      line-height: 1.9;
+      margin: 0;
+      flex: 1;
+    }
+
+    /* ============================================================
+       1️⃣4️⃣ لایت‌باکس
+       ============================================================ */
+    .lightbox {
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,.92);
+      backdrop-filter: blur(10px);
+      z-index: 5000;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      visibility: hidden;
+      transition: var(--transition);
+      cursor: zoom-out;
+    }
+    .lightbox.active { opacity: 1; visibility: visible; }
+    .lightbox img {
+      max-width: 90%;
+      max-height: 85vh;
+      border-radius: var(--radius-sm);
+      box-shadow: 0 30px 80px rgba(0,0,0,.5);
+      transform: scale(.9);
+      transition: transform .3s ease;
+    }
+    .lightbox.active img { transform: scale(1); }
+    .lightbox-close {
+      position: absolute;
+      top: var(--space-5);
+      left: var(--space-5);
+      width: 52px;
+      height: 52px;
+      border-radius: 50%;
+      background: rgba(255,255,255,.15);
+      border: none;
+      color: #fff;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      transition: var(--transition);
+    }
+    .lightbox-close svg { width: 24px; height: 24px; }
+    .lightbox-close:hover {
+      background: var(--honey);
+      transform: rotate(90deg);
+    }
+
+    /* ============================================================
+       1️⃣5️⃣ بنر مشاوره
+       ============================================================ */
+    .consult-banner {
+      background: linear-gradient(135deg, var(--honey), var(--honey-dark));
+      border-radius: var(--radius);
+      padding: var(--space-7);
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: var(--space-6);
+      flex-wrap: wrap;
+      box-shadow: 0 20px 50px rgba(245,166,35,.3);
+      margin-bottom: var(--space-7);
+      position: relative;
+      overflow: hidden;
+    }
+    .consult-banner::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='56' height='100' viewBox='0 0 56 100'%3E%3Cpath d='M28 66L0 50V16L28 0l28 16v34L28 66zm0-2l26-15V17L28 2 2 17v32l26 15z' fill='%23ffffff' fill-opacity='0.06'/%3E%3C/svg%3E");
+      pointer-events: none;
+    }
+    .consult-banner-text { position: relative; z-index: 1; }
+    .consult-banner-text h3 {
+      font-size: 1.5rem;
+      font-weight: 900;
+      margin-bottom: var(--space-2);
+      display: inline-flex;
+      align-items: center;
+      gap: var(--space-2);
+    }
+    .consult-banner-text h3 svg { width: 28px; height: 28px; }
+    .consult-banner-text p {
+      margin: 0;
+      font-size: 1rem;
+      opacity: .95;
+    }
+    .consult-banner .btn-white { position: relative; z-index: 1; }
+
+    /* ============================================================
+       1️⃣6️⃣ درباره ما
+       ============================================================ */
+    .about-section {
+      background: var(--cream);
+      padding: var(--space-8) 0;
+    }
+    .about-visual-box {
+      background: linear-gradient(135deg, var(--honey), var(--honey-dark));
+      border-radius: var(--radius);
+      padding: var(--space-8);
+      text-align: center;
+      color: #fff;
+      position: relative;
+      overflow: hidden;
+      box-shadow: 0 20px 60px rgba(245,166,35,.3);
+      min-height: 340px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .about-visual-box::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='56' height='100' viewBox='0 0 56 100'%3E%3Cpath d='M28 66L0 50V16L28 0l28 16v34L28 66zm0-2l26-15V17L28 2 2 17v32l26 15z' fill='%23ffffff' fill-opacity='0.08'/%3E%3C/svg%3E");
+    }
+    .about-bee-svg {
+      width: 180px;
+      height: 180px;
+      color: #fff;
+      position: relative;
+      z-index: 1;
+      animation: beeAbout 5s ease-in-out infinite;
+      filter: drop-shadow(0 15px 30px rgba(0,0,0,.2));
+    }
+    @keyframes beeAbout {
+      0%, 100% { transform: translateY(0) rotate(-3deg); }
+      50% { transform: translateY(-15px) rotate(3deg); }
+    }
+
+    .about-content h2 {
+      font-size: 2rem;
+      font-weight: 900;
+      color: var(--brown);
+      margin-bottom: var(--space-4);
+    }
+    .about-content p {
+      color: var(--brown-light);
+      margin-bottom: var(--space-3);
+      line-height: 2;
+    }
+    .about-feature-list {
+      list-style: none;
+      padding: 0;
+      margin: var(--space-5) 0 0;
+    }
+    .about-feature-list li {
+      display: flex;
+      align-items: center;
+      gap: var(--space-3);
+      margin-bottom: var(--space-3);
+      color: var(--brown-light);
+      font-weight: 600;
+      font-size: .95rem;
+      line-height: 1.5;
+    }
+    .check-icon {
+      width: 24px;
+      height: 24px;
+      min-width: 24px;
+      border-radius: 50%;
+      background: rgba(39,174,96,.12);
+      color: var(--green);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .check-icon svg { width: 14px; height: 14px; }
+
+    /* ============================================================
+       1️⃣7️⃣ نظرات
+       ============================================================ */
+    .testimonial-card {
+      background: var(--card-bg);
+      border-radius: var(--radius);
+      padding: var(--space-6);
+      box-shadow: var(--shadow);
+      border: 1px solid rgba(61,31,10,.04);
+      height: 100%;
+      transition: var(--transition);
+      position: relative;
+    }
+    .testimonial-card:hover {
+      transform: translateY(-6px);
+      box-shadow: var(--shadow-hover);
+    }
+    .quote-mark {
+      position: absolute;
+      top: var(--space-4);
+      left: var(--space-5);
+      width: 48px;
+      height: 48px;
+      color: rgba(245,166,35,.15);
+    }
+    .testimonial-stars {
+      display: inline-flex;
+      gap: 2px;
+      color: var(--honey);
+      margin-bottom: var(--space-3);
+    }
+    .testimonial-stars svg { width: 18px; height: 18px; fill: currentColor; }
+    .testimonial-card p {
+      font-style: italic;
+      color: var(--brown-light);
+      margin-bottom: var(--space-4);
+      line-height: 1.9;
+      font-size: .95rem;
+    }
+    .testimonial-author {
+      display: flex;
+      align-items: center;
+      gap: var(--space-3);
+      border-top: 1px dashed rgba(61,31,10,.08);
+      padding-top: var(--space-4);
+    }
+    .testimonial-avatar {
+      width: 48px;
+      height: 48px;
+      min-width: 48px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--honey), var(--honey-dark));
+      color: #fff;
+      font-weight: 800;
+      font-size: 1.15rem;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .testimonial-author-info strong {
+      display: block;
+      color: var(--brown);
+      font-size: .95rem;
+      line-height: 1.3;
+      margin-bottom: 2px;
+    }
+    .testimonial-author-info small {
+      color: var(--brown-light);
+      font-size: .8rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+    }
+    .testimonial-author-info small svg { width: 12px; height: 12px; }
+
+    /* ============================================================
+       1️⃣8️⃣ تماس
+       ============================================================ */
+    .contact-section {
+      background: var(--cream);
+      padding: var(--space-8) 0;
+    }
+    .contact-info-card {
+      display: flex;
+      align-items: center;
+      gap: var(--space-4);
+      background: var(--card-bg);
+      padding: var(--space-4) var(--space-5);
+      border-radius: var(--radius-sm);
+      box-shadow: var(--shadow);
+      transition: var(--transition);
+      margin-bottom: var(--space-4);
+      min-height: 88px;
+    }
+    .contact-info-card:hover {
+      transform: translateX(-6px);
+      box-shadow: var(--shadow-hover);
+    }
+    .contact-info-card .icon-box {
+      width: 52px;
+      height: 52px;
+      min-width: 52px;
+      border-radius: 14px;
+      background: linear-gradient(135deg, rgba(245,166,35,.15), rgba(212,136,15,.08));
+      color: var(--honey-dark);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      transition: var(--transition);
+    }
+    .contact-info-card .icon-box svg { width: 26px; height: 26px; }
+    .contact-info-card:hover .icon-box {
+      background: linear-gradient(135deg, var(--honey), var(--honey-dark));
+      color: #fff;
+    }
+    /* در کارت تماس، کادر سفید بله بزرگ‌تر */
+    .contact-info-card .bale-icon-box {
+      width: 52px !important;
+      height: 52px !important;
+      padding: 8px !important;
+      border-radius: 14px !important;
+      box-shadow:
+        0 4px 12px rgba(61,31,10,.12),
+        inset 0 0 0 1px rgba(61,31,10,.08);
+    }
+    .contact-info-card:hover .bale-icon-box {
+      box-shadow:
+        0 6px 18px rgba(245,166,35,.35),
+        inset 0 0 0 1px rgba(245,166,35,.4);
+    }
+    .contact-info-card strong {
+      display: block;
+      color: var(--brown);
+      font-size: .95rem;
+      margin-bottom: 4px;
+      line-height: 1.3;
+    }
+    .contact-info-card span, .contact-info-card a {
+      color: var(--brown-light);
+      font-size: .9rem;
+      line-height: 1.3;
+    }
+    .contact-info-card a:hover { color: var(--honey-dark); }
+
+    .contact-cta-card {
+      background: var(--card-bg);
+      padding: var(--space-7);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      gap: var(--space-4);
+    }
+    .contact-cta-icon {
+      width: 96px;
+      height: 96px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, rgba(245,166,35,.15), rgba(212,136,15,.08));
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--honey-dark);
+      margin-bottom: var(--space-3);
+    }
+    .contact-cta-icon svg { width: 48px; height: 48px; }
+    .contact-cta-card h3 {
+      font-weight: 900;
+      color: var(--brown);
+      font-size: 1.35rem;
+      margin-bottom: var(--space-2);
+    }
+    .contact-cta-card p {
+      color: var(--brown-light);
+      max-width: 400px;
+      margin: 0 auto;
+    }
+    .trust-summary {
+      display: inline-flex;
+      align-items: center;
+      gap: var(--space-2);
+      background: rgba(39,174,96,.1);
+      border-radius: var(--radius-sm);
+      padding: var(--space-3) var(--space-5);
+      color: var(--green);
+      font-weight: 700;
+      font-size: .88rem;
+      margin-top: var(--space-2);
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    .trust-summary svg { width: 20px; height: 20px; }
+    .trust-summary .divider {
+      width: 1px;
+      height: 18px;
+      background: rgba(39,174,96,.3);
+    }
+
+    /* ============================================================
+       1️⃣9️⃣ فوتر
+       ============================================================ */
+    .site-footer {
+      background: linear-gradient(135deg, #2a1408, #1a0c04);
+      color: #e8d8c4;
+      padding: var(--space-8) 0 0;
+      position: relative;
+      overflow: hidden;
+    }
+    .site-footer::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='56' height='100' viewBox='0 0 56 100'%3E%3Cpath d='M28 66L0 50V16L28 0l28 16v34L28 66zm0-2l26-15V17L28 2 2 17v32l26 15z' fill='%23f5a623' fill-opacity='0.03'/%3E%3C/svg%3E");
+      pointer-events: none;
+    }
+    .site-footer > .container { position: relative; z-index: 1; }
+
+    .footer-brand {
+      display: inline-flex;
+      align-items: center;
+      gap: var(--space-3);
+      margin-bottom: var(--space-4);
+    }
+    .footer-brand-mark {
+      width: 48px;
+      height: 48px;
+      border-radius: 14px;
+      background: linear-gradient(135deg, var(--honey), var(--honey-dark));
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      box-shadow: 0 8px 20px rgba(245,166,35,.3);
+    }
+    .footer-brand-mark svg { width: 28px; height: 28px; }
+    .footer-brand-text strong {
+      display: block;
+      color: var(--honey);
+      font-size: 1.2rem;
+      font-weight: 900;
+      line-height: 1.2;
+    }
+    .footer-brand-text small {
+      color: rgba(232,216,196,.6);
+      font-size: .75rem;
+      letter-spacing: 1.5px;
+    }
+
+    .site-footer h5 {
+      color: var(--honey);
+      font-weight: 800;
+      margin-bottom: var(--space-4);
+      font-size: 1rem;
+      display: inline-flex;
+      align-items: center;
+      gap: var(--space-2);
+    }
+    .site-footer h5 svg { width: 18px; height: 18px; }
+    .site-footer p {
+      font-size: .9rem;
+      line-height: 2;
+      color: rgba(232,216,196,.7);
+    }
+
+    .footer-links {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    .footer-links li { margin-bottom: var(--space-3); }
+    .footer-links a {
+      color: rgba(232,216,196,.7);
+      font-size: .9rem;
+      transition: var(--transition);
+      display: inline-flex;
+      align-items: center;
+      gap: var(--space-2);
+    }
+    .footer-links a svg {
+      width: 14px;
+      height: 14px;
+      transition: var(--transition);
+    }
+    .footer-links a:hover {
+      color: var(--honey);
+      transform: translateX(-5px);
+    }
+    .footer-links a:hover svg { transform: scale(1.2); }
+    /* در لینک‌های فوتر، کادر بله کوچک */
+    .footer-links .bale-icon-box {
+      width: 22px !important;
+      height: 22px !important;
+      padding: 3px !important;
+      border-radius: 6px !important;
+    }
+
+    .footer-social {
+      display: flex;
+      gap: var(--space-2);
+      margin-top: var(--space-4);
+    }
+    .footer-social a {
+      width: 48px;
+      height: 48px;
+      min-width: 48px;
+      border-radius: 50%;
+      background: rgba(255,255,255,.06);
+      color: #e8d8c4;
+      transition: var(--transition);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .footer-social a svg { width: 20px; height: 20px; }
+    .footer-social a:hover {
+      background: var(--honey);
+      color: #fff;
+      transform: translateY(-4px);
+    }
+    /* در شبکه‌های اجتماعی فوتر، کادر بله به صورت مربع کوچک */
+    .footer-social .bale-icon-box {
+      width: 34px !important;
+      height: 34px !important;
+      padding: 5px !important;
+      border-radius: 9px !important;
+    }
+    .footer-social a:hover .bale-icon-box {
+      transform: scale(1.05);
+    }
+
+    /* ============================================================
+       2️⃣0️⃣ بخش مجوز رسمی (فقط یک مجوز)
+       ============================================================ */
+    .trust-section {
+      border-top: 1px solid rgba(255,255,255,.08);
+      padding: var(--space-7) 0 var(--space-5);
+      margin-top: var(--space-5);
+    }
+
+    .trust-title {
+      text-align: center;
+      color: var(--honey);
+      font-weight: 800;
+      font-size: 1.05rem;
+      margin-bottom: var(--space-6);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: var(--space-2);
+    }
+    .trust-title svg { width: 22px; height: 22px; }
+
+    .trust-badges-grid {
+      display: flex;
+      align-items: stretch;
+      justify-content: center;
+      gap: var(--space-5);
+      flex-wrap: wrap;
+    }
+
+    .trust-card {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: var(--space-3);
+      background: rgba(255,255,255,.04);
+      border: 1.5px solid rgba(245,166,35,.25);
+      border-radius: var(--radius-sm);
+      padding: var(--space-5) var(--space-6);
+      transition: var(--transition);
+      min-width: 240px;
+      max-width: 300px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .trust-card::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: linear-gradient(45deg, transparent 30%, rgba(245,166,35,.08), transparent 70%);
+      transform: translateX(-100%);
+      transition: transform .8s ease;
+      pointer-events: none;
+    }
+    .trust-card:hover::before { transform: translateX(100%); }
+
+    .trust-card:hover {
+      transform: translateY(-6px);
+      border-color: var(--honey);
+      box-shadow: 0 15px 40px rgba(245,166,35,.3);
+      background: rgba(245,166,35,.06);
+    }
+
+    .trust-card-icon {
+      width: 70px;
+      height: 70px;
+      border-radius: 16px;
+      background: rgba(255,255,255,.06);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--honey);
+      position: relative;
+    }
+    .trust-card.license .trust-card-icon::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      border-radius: 16px;
+      border: 2px solid var(--honey);
+      animation: pulseRing 2s ease-out infinite;
+    }
+    @keyframes pulseRing {
+      0% { transform: scale(1); opacity: .8; }
+      100% { transform: scale(1.3); opacity: 0; }
+    }
+
+    .trust-card-icon svg { width: 34px; height: 34px; }
+    .trust-card-icon img {
+      width: 44px;
+      height: 44px;
+      object-fit: contain;
+      filter: brightness(0) invert(1);
+    }
+
+    .trust-card-text {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+    }
+    .trust-card-text strong {
+      color: #fff;
+      font-size: .92rem;
+      font-weight: 800;
+      line-height: 1.3;
+    }
+    .trust-card-text small {
+      color: rgba(232,216,196,.65);
+      font-size: .75rem;
+      line-height: 1.3;
+    }
+
+    .trust-card-verified {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      background: rgba(39,174,96,.15);
+      color: #4ade80;
+      padding: 3px 10px;
+      border-radius: 50px;
+      font-size: .68rem;
+      font-weight: 700;
+      margin-top: 2px;
+    }
+    .trust-card-verified svg { width: 12px; height: 12px; }
+
+    .footer-bottom {
+      border-top: 1px solid rgba(255,255,255,.06);
+      padding: var(--space-5) 0;
+      margin-top: var(--space-5);
+      text-align: center;
+      font-size: .85rem;
+      color: rgba(232,216,196,.5);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: var(--space-2);
+      flex-wrap: wrap;
+    }
+    .footer-bottom svg { width: 16px; height: 16px; }
+
+    /* ============================================================
+       2️⃣1️⃣ سبد خرید
+       ============================================================ */
+    .cart-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,.5);
+      backdrop-filter: blur(4px);
+      opacity: 0;
+      visibility: hidden;
+      transition: var(--transition);
+      z-index: 2000;
+    }
+    .cart-overlay.active { opacity: 1; visibility: visible; }
+
+    .cart-drawer {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: min(400px, 92%);
+      height: 100%;
+      background: var(--card-bg);
+      z-index: 2100;
+      transform: translateX(-100%);
+      transition: transform .4s cubic-bezier(.25,.8,.25,1);
+      display: flex;
+      flex-direction: column;
+      box-shadow: 20px 0 60px rgba(0,0,0,.2);
+    }
+    .cart-drawer.active { transform: translateX(0); }
+
+    .cart-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: var(--space-5);
+      border-bottom: 1px solid rgba(61,31,10,.08);
+    }
+    .cart-header h5 {
+      font-weight: 800;
+      color: var(--brown);
+      margin: 0;
+      display: inline-flex;
+      align-items: center;
+      gap: var(--space-2);
+    }
+    .cart-header h5 svg { width: 22px; height: 22px; color: var(--honey-dark); }
+
+    .cart-close {
+      background: none;
+      border: none;
+      cursor: pointer;
+      color: var(--brown-light);
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      transition: var(--transition);
+    }
+    .cart-close svg { width: 20px; height: 20px; }
+    .cart-close:hover {
+      background: rgba(245,166,35,.1);
+      color: var(--honey-dark);
+      transform: rotate(90deg);
+    }
+
+    .cart-items {
+      flex: 1;
+      overflow-y: auto;
+      padding: var(--space-5);
+    }
+    .cart-item {
+      display: flex;
+      gap: var(--space-3);
+      margin-bottom: var(--space-4);
+      padding-bottom: var(--space-4);
+      border-bottom: 1px solid rgba(61,31,10,.06);
+      animation: slideIn .3s ease;
+    }
+    @keyframes slideIn {
+      from { opacity: 0; transform: translateX(-20px); }
+      to { opacity: 1; transform: translateX(0); }
+    }
+    .cart-item-icon {
+      width: 55px;
+      height: 55px;
+      min-width: 55px;
+      border-radius: 14px;
+      background: linear-gradient(135deg, rgba(245,166,35,.15), rgba(212,136,15,.08));
+      color: var(--honey-dark);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .cart-item-icon svg { width: 32px; height: 32px; }
+    .cart-item-info { flex: 1; }
+    .cart-item-info h6 {
+      font-weight: 700;
+      color: var(--brown);
+      margin-bottom: 4px;
+      font-size: .9rem;
+      line-height: 1.3;
+    }
+    .cart-item-info .cart-item-price {
+      font-size: .85rem;
+      color: var(--honey-dark);
+      font-weight: 700;
+      line-height: 1.3;
+    }
+    .cart-qty {
+      display: flex;
+      align-items: center;
+      gap: var(--space-2);
+      margin-top: var(--space-2);
+    }
+    .cart-qty button {
+      width: 30px;
+      height: 30px;
+      border-radius: 8px;
+      border: 1px solid rgba(61,31,10,.12);
+      background: var(--bg);
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      transition: var(--transition);
+      color: var(--brown);
+      padding: 0;
+    }
+    .cart-qty button svg { width: 16px; height: 16px; }
+    .cart-qty button:hover {
+      background: var(--honey);
+      border-color: var(--honey);
+      color: #fff;
+    }
+    .cart-qty span {
+      font-weight: 700;
+      min-width: 24px;
+      text-align: center;
+      font-size: .9rem;
+      color: var(--brown);
+    }
+    .cart-remove {
+      background: none;
+      border: none;
+      color: var(--danger);
+      cursor: pointer;
+      font-size: .78rem;
+      padding: 0 4px;
+      margin-right: auto;
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      font-family: inherit;
+    }
+    .cart-remove svg { width: 14px; height: 14px; }
+    .cart-remove:hover { color: #c0392b; }
+
+    .cart-empty {
+      text-align: center;
+      padding: var(--space-8) var(--space-5);
+      color: var(--brown-light);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+    .cart-empty-icon {
+      width: 96px;
+      height: 96px;
+      border-radius: 50%;
+      background: rgba(245,166,35,.08);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--honey-dark);
+      margin-bottom: var(--space-4);
+    }
+    .cart-empty-icon svg { width: 48px; height: 48px; }
+
+    .cart-footer {
+      padding: var(--space-5);
+      border-top: 1px solid rgba(61,31,10,.08);
+    }
+    .cart-total {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: var(--space-3);
+      font-weight: 800;
+      color: var(--brown);
+      font-size: 1.05rem;
+    }
+    .cart-total .total-price {
+      color: var(--honey-dark);
+      font-size: 1.2rem;
+    }
+    .cart-shipping-note {
+      background: rgba(39,174,96,.1);
+      border-radius: var(--radius-sm);
+      padding: 0 var(--space-4);
+      height: 38px;
+      margin-bottom: var(--space-4);
+      font-size: .82rem;
+      color: var(--green);
+      font-weight: 700;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: var(--space-2);
+      width: 100%;
+    }
+    .cart-shipping-note svg { width: 18px; height: 18px; }
+
+    /* ============================================================
+       2️⃣2️⃣ توست
+       ============================================================ */
+    .toast-notification {
+      position: fixed;
+      bottom: var(--space-6);
+      left: 50%;
+      transform: translateX(-50%) translateY(100px);
+      background: var(--brown);
+      color: #fff;
+      padding: 0 var(--space-5);
+      height: 52px;
+      border-radius: 50px;
+      opacity: 0;
+      transition: var(--transition);
+      z-index: 3000;
+      font-weight: 700;
+      font-size: .9rem;
+      box-shadow: 0 15px 40px rgba(0,0,0,.3);
+      display: inline-flex;
+      align-items: center;
+      gap: var(--space-2);
+      white-space: nowrap;
+    }
+    .toast-notification.show {
+      transform: translateX(-50%) translateY(0);
+      opacity: 1;
+    }
+    .toast-notification svg { width: 20px; height: 20px; color: var(--green); }
+
+    /* ============================================================
+       2️⃣3️⃣ دکمه بازگشت به بالا
+       ============================================================ */
+    .back-to-top {
+      position: fixed;
+      bottom: var(--space-6);
+      right: var(--space-6);
+      width: 52px;
+      height: 52px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--honey), var(--honey-dark));
+      color: #fff;
+      border: none;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 8px 25px rgba(245,166,35,.4);
+      transition: var(--transition);
+      opacity: 0;
+      visibility: hidden;
+      z-index: 900;
+    }
+    .back-to-top svg { width: 22px; height: 22px; }
+    .back-to-top.show { opacity: 1; visibility: visible; }
+    .back-to-top:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 12px 35px rgba(245,166,35,.55);
+    }
+
+    /* ============================================================
+       2️⃣4️⃣ پیش‌بارگذار
+       ============================================================ */
+    .preloader {
+      position: fixed;
+      inset: 0;
+      background: var(--bg);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 9999;
+      transition: opacity .5s, visibility .5s;
+    }
+    .preloader.hide { opacity: 0; visibility: hidden; }
+    .preloader-inner { text-align: center; }
+    .preloader-jar-svg {
+      width: 64px;
+      height: 64px;
+      color: var(--honey-dark);
+      margin: 0 auto var(--space-3);
+      animation: bounce 1s ease-in-out infinite;
+    }
+    @keyframes bounce {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-12px); }
+    }
+    .preloader-text {
+      font-weight: 800;
+      color: var(--honey-dark);
+      font-size: 1rem;
+      letter-spacing: 1px;
+    }
+
+    /* ============================================================
+       2️⃣5️⃣ انیمیشن ورود
+       ============================================================ */
+    .reveal {
+      opacity: 0;
+      transform: translateY(40px);
+      transition: opacity .7s ease, transform .7s ease;
+    }
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* ============================================================
+       2️⃣6️⃣ ریسپانسیو
+       ============================================================ */
+    @media (max-width: 991.98px) {
+      .nav-links {
+        display: none;
+        position: absolute;
+        top: 100%; right: 0; left: 0;
+        background: var(--card-bg);
+        flex-direction: column;
+        padding: var(--space-5);
+        gap: var(--space-4);
+        box-shadow: 0 20px 40px rgba(0,0,0,.1);
+        border-radius: 0 0 var(--radius) var(--radius);
+        border-top: 1px solid rgba(61,31,10,.06);
+      }
+      .nav-links.open { display: flex; }
+      .menu-toggle { display: inline-flex; }
+      .hero { padding: 120px 0 60px; }
+      .hero-visual { margin-top: var(--space-6); min-height: auto; }
+      .hero-image { max-width: 380px; }
+      .floating-bee svg { width: 45px; height: 45px; }
+      .about-visual-box { min-height: 260px; margin-bottom: var(--space-5); }
+      .about-bee-svg { width: 140px; height: 140px; }
+    }
+
+    @media (max-width: 575.98px) {
+      :root {
+        --space-8: 44px;
+        --space-7: 32px;
+      }
+      .hero-title { font-size: 1.7rem; }
+      .btn-primary-honey,
+      .btn-outline-honey,
+      .btn-bale,
+      .btn-white {
+        width: 100%;
+        padding: 0 var(--space-5);
+      }
+      .hero-actions { flex-direction: column; }
+      .counter-item { padding: var(--space-3) 0; }
+      .counter-icon-wrapper { width: 60px; height: 60px; }
+      .counter-icon-wrapper svg { width: 28px; height: 28px; }
+      .counter-num { font-size: 1.9rem; }
+      .product-image-wrapper { height: 160px; }
+      .product-svg-icon { width: 76px; height: 76px; }
+      .trust-badges-grid { flex-direction: column; align-items: center; }
+      .trust-card { width: 100%; max-width: 300px; }
+      .cart-drawer { width: 100%; }
+      .consult-banner { padding: var(--space-5); }
+      .contact-cta-card { padding: var(--space-5); }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ===== پیش‌بارگذار ===== -->
+  <div class="preloader" id="preloader">
+    <div class="preloader-inner">
+      <svg class="preloader-jar-svg" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M22 8h20v6H22z"/>
+        <path d="M20 14h24c2 0 3 1 3 3v34c0 3-2 6-5 6H22c-3 0-5-3-5-6V17c0-2 1-3 3-3z"/>
+        <path d="M18 30h28"/>
+        <path d="M18 40h28"/>
+      </svg>
+      <div class="preloader-text">فروشگاه حاج احمد</div>
+    </div>
+  </div>
+
+  <!-- ===== هدر ===== -->
+  <header class="site-header" id="siteHeader">
+    <div class="container">
+      <div class="nav-inner">
+        <a href="#" class="logo">
+          <span class="logo-mark">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M8 3h8v2.5H8z"/>
+              <path d="M7 5.5h10c1 0 1.5.5 1.5 1.5v11c0 1.5-1 3-2.5 3h-8C6.5 21 5.5 19.5 5.5 18V7c0-1 .5-1.5 1.5-1.5z"/>
+              <path d="M7 10.5h10"/>
+              <path d="M7 14.5h10"/>
+            </svg>
+          </span>
+          <span class="logo-text">
+            <strong>حاج احمد</strong>
+            <small>عسل طبیعی</small>
+          </span>
+        </a>
+
+        <nav>
+          <ul class="nav-links" id="navLinks">
+            <li><a href="#products">محصولات</a></li>
+            <li><a href="#order-story">پشت صحنه</a></li>
+            <li><a href="#about">درباره ما</a></li>
+            <li><a href="#features">چرا ما؟</a></li>
+            <li><a href="#testimonials">نظرات</a></li>
+            <li><a href="#contact">تماس</a></li>
+          </ul>
+        </nav>
+
+        <div class="nav-actions">
+          <button class="icon-btn" id="themeToggle" title="تغییر حالت">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" id="themeIcon">
+              <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+            </svg>
+          </button>
+
+          <button class="cart-btn" id="cartBtn">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/>
+              <path d="M3 6h18"/>
+              <path d="M16 10a4 4 0 0 1-8 0"/>
+            </svg>
+            <span class="d-none d-sm-inline">سبد خرید</span>
+            <span class="badge" id="cartCount">۰</span>
+          </button>
+
+          <button class="menu-toggle" id="menuToggle">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round">
+              <path d="M3 6h18M3 12h18M3 18h18"/>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- ===== هیرو ===== -->
+  <section class="hero">
+    <div class="container">
+      <div class="row align-items-center g-5">
+        <div class="col-lg-6 hero-content">
+          <span class="hero-badge">
+            <span class="dot"></span>
+            فروشگاه فعال — ارسال به سراسر کشور
+          </span>
+
+          <h1 class="hero-title">
+            عسل طبیعی <span class="highlight">حاج احمد</span><br>
+            طعم اصیل طبیعت
+          </h1>
+
+          <p class="hero-desc">
+            عسل خالص، بدون شکر و افزودنی، مستقیماً از کندوهای زنبور عسل در دامنه‌های بکر کوهستان.
+          </p>
+
+          <div class="hero-highlights">
+            <span class="hero-highlight-item">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M1 3h15v13H1z"/><path d="M16 8h4l3 3v5h-7z"/>
+                <circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/>
+              </svg>
+              ارسال رایگان
+            </span>
+            <span class="hero-highlight-item">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M9 12l2 2 4-4"/>
+                <path d="M21 12c0 5-3.5 9-9 9s-9-4-9-9 3.5-9 9-9 9 4 9 9z"/>
+              </svg>
+              ساکارز زیر ۳٪
+            </span>
+            <span class="hero-highlight-item">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+              </svg>
+              مشاوره رایگان
+            </span>
+          </div>
+
+          <div class="hero-actions">
+            <a href="#products" class="btn-primary-honey">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="3" y="3" width="7" height="7"/>
+                <rect x="14" y="3" width="7" height="7"/>
+                <rect x="14" y="14" width="7" height="7"/>
+                <rect x="3" y="14" width="7" height="7"/>
+              </svg>
+              مشاهده محصولات
+            </a>
+            <a href="https://ble.ir/ahmad7745" target="_blank" class="btn-bale">
+              <!-- 🌟 لوگوی بله در کادر سفید و رنگ عسلی -->
+              <span class="bale-icon-box size-sm">
+                <img src="https://raw.githubusercontent.com/Mohammad23tt/asal-foroush-haj-ahmad/main/New-Logo-of-Bale.svg" alt="بله">
+              </span>
+              ثبت سفارش
+            </a>
+          </div>
+        </div>
+
+        <div class="col-lg-6">
+          <div class="hero-visual">
+            <div class="deco-circle c1"></div>
+            <div class="deco-circle c2"></div>
+            <div class="floating-bee">
+              <svg viewBox="0 0 64 64" fill="none">
+                <ellipse cx="32" cy="36" rx="14" ry="16" fill="#f5a623"/>
+                <path d="M18 30h28M18 38h28M19 46h26" stroke="#3d1f0a" stroke-width="2.5" stroke-linecap="round"/>
+                <circle cx="32" cy="22" r="7" fill="#3d1f0a"/>
+                <path d="M27 18l-4-6M37 18l4-6" stroke="#3d1f0a" stroke-width="2.5" stroke-linecap="round"/>
+                <ellipse cx="18" cy="30" rx="8" ry="12" fill="#fff" opacity=".55"/>
+                <ellipse cx="46" cy="30" rx="8" ry="12" fill="#fff" opacity=".55"/>
+              </svg>
+            </div>
+            <img src="https://raw.githubusercontent.com/Mohammad23tt/asal-foroush-haj-ahmad/main/1768904669694.jpg"
+                 alt="عسل طبیعی حاج احمد" class="hero-image" loading="lazy">
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== نوار ارسال رایگان ===== -->
+  <div class="free-shipping-bar">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M1 3h15v13H1z"/><path d="M16 8h4l3 3v5h-7z"/>
+      <circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/>
+    </svg>
+    ارسال رایگان با پست به سراسر کشور
+  </div>
+
+  <!-- ===== شمارنده ===== -->
+  <section class="counter-section">
+    <div class="container">
+      <div class="row">
+        <div class="col-6 col-md-3 counter-item">
+          <span class="counter-icon-wrapper">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+              <circle cx="9" cy="7" r="4"/>
+              <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
+              <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+            </svg>
+          </span>
+          <span class="counter-num" data-target="5000">۰</span>
+          <span class="counter-label">مشتری راضی</span>
+        </div>
+        <div class="col-6 col-md-3 counter-item">
+          <span class="counter-icon-wrapper">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="8" r="6"/>
+              <path d="M15.477 12.89 17 22l-5-3-5 3 1.523-9.11"/>
+            </svg>
+          </span>
+          <span class="counter-num" data-target="30">۰</span>
+          <span class="counter-label">سال تجربه</span>
+        </div>
+        <div class="col-6 col-md-3 counter-item">
+          <span class="counter-icon-wrapper">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/>
+              <path d="m3.27 6.96 8.73 5.05 8.73-5.05"/>
+              <path d="M12 22.08V12"/>
+            </svg>
+          </span>
+          <span class="counter-num" data-target="6">۰</span>
+          <span class="counter-label">نوع عسل طبیعی</span>
+        </div>
+        <div class="col-6 col-md-3 counter-item">
+          <span class="counter-icon-wrapper">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
+            </svg>
+          </span>
+          <span class="counter-num" data-target="98">۰</span>
+          <span class="counter-label">درصد رضایت</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== محصولات ===== -->
+  <section class="section" id="products">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-badge">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M8 3h8v2.5H8z"/>
+            <path d="M7 5.5h10c1 0 1.5.5 1.5 1.5v11c0 1.5-1 3-2.5 3h-8C6.5 21 5.5 19.5 5.5 18V7c0-1 .5-1.5 1.5-1.5z"/>
+          </svg>
+          لیست عسل‌های طبیعی موجود
+        </span>
+        <h2>عسل‌های خالص و طبیعی</h2>
+        <p>همه محصولات دارای ضمانت اصالت و ارسال رایگان می‌باشند</p>
+      </div>
+
+      <div class="product-filters reveal">
+        <button class="filter-btn active" data-filter="all">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/>
+            <rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/>
+          </svg>
+          همه
+        </button>
+        <button class="filter-btn" data-filter="بدون موم">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M20 6 9 17l-5-5"/>
+          </svg>
+          بدون موم
+        </button>
+        <button class="filter-btn" data-filter="موم‌دار">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="10"/><path d="M12 8v8M8 12h8"/>
+          </svg>
+          موم‌دار
+        </button>
+      </div>
+
+      <div class="row g-4" id="productGrid"></div>
+    </div>
+  </section>
+
+  <!-- ===== پشت صحنه سفارش ===== -->
+  <section class="order-story-section" id="order-story">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-badge">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/>
+            <circle cx="12" cy="13" r="4"/>
+          </svg>
+          پشت صحنه سفارش‌ها
+        </span>
+        <h2>یک سفارش واقعی، مرحله به مرحله</h2>
+        <p>نگاهی به فرآیند آماده‌سازی و ارسال سفارشات</p>
+      </div>
+
+      <div class="row g-4">
+        <div class="col-md-4 reveal">
+          <div class="order-story-card">
+            <div class="order-story-img-wrapper" onclick="openLightbox('https://raw.githubusercontent.com/Mohammad23tt/asal-foroush-haj-ahmad/main/file_000000009ea08246ab1a5a83d6459448.png')">
+              <span class="order-story-step-badge">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M20 6 9 17l-5-5"/>
+                </svg>
+                مرحله ۱
+              </span>
+              <img src="https://raw.githubusercontent.com/Mohammad23tt/asal-foroush-haj-ahmad/main/file_000000009ea08246ab1a5a83d6459448.png" alt="آماده‌سازی سفارش" loading="lazy">
+            </div>
+            <div class="order-story-body">
+              <h5>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M8 3h8v2.5H8z"/>
+                  <path d="M7 5.5h10c1 0 1.5.5 1.5 1.5v11c0 1.5-1 3-2.5 3h-8C6.5 21 5.5 19.5 5.5 18V7c0-1 .5-1.5 1.5-1.5z"/>
+                </svg>
+                آماده‌سازی عسل
+              </h5>
+              <p>عسل بهارنارنج خالص و طبیعی، آماده برای بسته‌بندی و ارسال به مشتری.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-4 reveal">
+          <div class="order-story-card">
+            <div class="order-story-img-wrapper" onclick="openLightbox('https://raw.githubusercontent.com/Mohammad23tt/asal-foroush-haj-ahmad/main/file_000000003ec0824684f77647aa85d1dd.png')">
+              <span class="order-story-step-badge">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M20 6 9 17l-5-5"/>
+                </svg>
+                مرحله ۲
+              </span>
+              <img src="https://raw.githubusercontent.com/Mohammad23tt/asal-foroush-haj-ahmad/main/file_000000003ec0824684f77647aa85d1dd.png" alt="بسته‌بندی" loading="lazy">
+            </div>
+            <div class="order-story-body">
+              <h5>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/>
+                </svg>
+                بسته‌بندی ایمن
+              </h5>
+              <p>بسته‌بندی بهداشتی و مقاوم برای ارسال مطمئن. سفارش یک کیلو عسل بهارنارنج بود.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-4 reveal">
+          <div class="order-story-card">
+            <div class="order-story-img-wrapper" onclick="openLightbox('https://raw.githubusercontent.com/Mohammad23tt/asal-foroush-haj-ahmad/main/file_000000009cd48246b0131bd5e5217f4f.png')">
+              <span class="order-story-step-badge">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M20 6 9 17l-5-5"/>
+                </svg>
+                مرحله ۳
+              </span>
+              <img src="https://raw.githubusercontent.com/Mohammad23tt/asal-foroush-haj-ahmad/main/file_000000009cd48246b0131bd5e5217f4f.png" alt="آماده ارسال" loading="lazy">
+            </div>
+            <div class="order-story-body">
+              <h5>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M1 3h15v13H1z"/><path d="M16 8h4l3 3v5h-7z"/>
+                  <circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/>
+                </svg>
+                آماده ارسال
+              </h5>
+              <p>سفارش آماده تحویل به پست و ارسال رایگان به دست مشتری.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== لایت‌باکس ===== -->
+  <div class="lightbox" id="lightbox">
+    <button class="lightbox-close" id="lightboxClose">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M18 6 6 18M6 6l12 12"/>
+      </svg>
+    </button>
+    <img src="" alt="تصویر بزرگ" id="lightboxImage">
+  </div>
+
+  <!-- ===== بنر مشاوره ===== -->
+  <section style="padding: 0 0 60px;">
+    <div class="container">
+      <div class="consult-banner reveal">
+        <div class="consult-banner-text">
+          <h3>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+            </svg>
+            راهنمای انتخاب عسل
+          </h3>
+          <p>مشاوره رایگان بر اساس طبع و نیاز شما</p>
+        </div>
+        <a href="https://ble.ir/ahmad7745" target="_blank" class="btn-white">
+          <span class="bale-icon-box size-sm">
+            <img src="https://raw.githubusercontent.com/Mohammad23tt/asal-foroush-haj-ahmad/main/New-Logo-of-Bale.svg" alt="بله">
+          </span>
+          دریافت مشاوره رایگان
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== چرا ما ===== -->
+  <section class="section" id="features" style="background:var(--cream);">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-badge">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
+          </svg>
+          چرا ما؟
+        </span>
+        <h2>تعهد ما به کیفیت و اصالت</h2>
+        <p>دلایلی که ما را از دیگران متمایز می‌کند</p>
+      </div>
+
+      <div class="row g-4">
+        <div class="col-md-6 col-lg-3 reveal">
+          <div class="feature-card">
+            <div class="feature-icon-wrapper">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 22a7 7 0 0 0 7-7c0-2-1-3.9-3-5.5s-3.5-4-4-6.5c-.5 2.5-2 4.9-4 6.5S5 13 5 15a7 7 0 0 0 7 7z"/>
+              </svg>
+            </div>
+            <h5>۱۰۰٪ طبیعی</h5>
+            <p>بدون شکر، بدون افزودنی و بدون مواد نگهدارنده</p>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-3 reveal">
+          <div class="feature-card">
+            <div class="feature-icon-wrapper">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M1 3h15v13H1z"/><path d="M16 8h4l3 3v5h-7z"/>
+                <circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/>
+              </svg>
+            </div>
+            <h5>ارسال رایگان</h5>
+            <p>ارسال رایگان با پست به سراسر کشور</p>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-3 reveal">
+          <div class="feature-card">
+            <div class="feature-icon-wrapper">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M9 11l3 3L22 4"/>
+                <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/>
+              </svg>
+            </div>
+            <h5>ساکارز زیر ۳٪</h5>
+            <p>آزمایش‌شده و دارای برگه آزمایش معتبر</p>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-3 reveal">
+          <div class="feature-card">
+            <div class="feature-icon-wrapper">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M3 18v-6a9 9 0 0 1 18 0v6"/>
+                <path d="M21 19a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3zM3 19a2 2 0 0 0 2 2h1a2 2 0 0 0 2-2v-3a2 2 0 0 0-2-2H3z"/>
+              </svg>
+            </div>
+            <h5>مشاوره رایگان</h5>
+            <p>راهنمای انتخاب عسل بر اساس طبع و نیاز شما</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== درباره ما ===== -->
+  <section class="about-section" id="about">
+    <div class="container">
+      <div class="row align-items-center g-5">
+        <div class="col-lg-6 reveal">
+          <div class="about-visual-box">
+            <svg class="about-bee-svg" viewBox="0 0 64 64" fill="none">
+              <ellipse cx="32" cy="36" rx="14" ry="16" fill="rgba(255,255,255,.95)"/>
+              <path d="M18 30h28M18 38h28M19 46h26" stroke="#f5a623" stroke-width="3" stroke-linecap="round"/>
+              <circle cx="32" cy="22" r="7" fill="#fff"/>
+              <circle cx="29.5" cy="21" r="1.5" fill="#3d1f0a"/>
+              <circle cx="34.5" cy="21" r="1.5" fill="#3d1f0a"/>
+              <path d="M27 18l-4-6M37 18l4-6" stroke="#fff" stroke-width="2.5" stroke-linecap="round"/>
+              <ellipse cx="18" cy="30" rx="8" ry="12" fill="#fff" opacity=".6"/>
+              <ellipse cx="46" cy="30" rx="8" ry="12" fill="#fff" opacity=".6"/>
+            </svg>
+          </div>
+        </div>
+
+        <div class="col-lg-6 reveal">
+          <div class="about-content">
+            <h2>درباره حاج احمد</h2>
+            <p>فروشگاه حاج احمد با بیش از ۳۰ سال تجربه در زمینه تولید و عرضه عسل طبیعی، افتخار دارد که بهترین و خالص‌ترین عسل را بدون هیچ‌گونه افزودنی به دست شما برساند.</p>
+            <p>تمام محصولات ما مستقیماً از کندوهای زنبور عسل در مناطق بکر کوهستانی تهیه می‌شوند.</p>
+            <ul class="about-feature-list">
+              <li>
+                <span class="check-icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M20 6 9 17l-5-5"/>
+                  </svg>
+                </span>
+                برداشت مستقیم از کندوهای کوهستانی
+              </li>
+              <li>
+                <span class="check-icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M20 6 9 17l-5-5"/>
+                  </svg>
+                </span>
+                دارای برگه آزمایش ساکارز زیر ۳٪
+              </li>
+              <li>
+                <span class="check-icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M20 6 9 17l-5-5"/>
+                  </svg>
+                </span>
+                بسته‌بندی بهداشتی و مقاوم
+              </li>
+              <li>
+                <span class="check-icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M20 6 9 17l-5-5"/>
+                  </svg>
+                </span>
+                ارسال رایگان به سراسر ایران
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== نظرات ===== -->
+  <section class="section" id="testimonials">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-badge">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+          </svg>
+          نظرات
+        </span>
+        <h2>مشتریان ما چه می‌گویند؟</h2>
+        <p>تجربه واقعی افرادی که از ما خرید کرده‌اند</p>
+      </div>
+
+      <div class="row g-4">
+        <div class="col-md-6 col-lg-4 reveal">
+          <div class="testimonial-card">
+            <svg class="quote-mark" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M3 21c3.5 0 7-2.5 7-7V3H3v11h4c0 2-1.5 4-4 4v3zm11 0c3.5 0 7-2.5 7-7V3h-7v11h4c0 2-1.5 4-4 4v3z"/>
+            </svg>
+            <div class="testimonial-stars">
+              <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+              <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+              <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+              <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+              <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            </div>
+            <p>«عسل آویشن حاج احمد واقعاً بی‌نظیره. طعمش با عسل‌های بازار قابل مقایسه نیست.»</p>
+            <div class="testimonial-author">
+              <div class="testimonial-avatar">ر</div>
+              <div class="testimonial-author-info">
+                <strong>رضا محمدی</strong>
+                <small>
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+                    <circle cx="12" cy="10" r="3"/>
+                  </svg>
+                  تهران
+                </small>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-4 reveal">
+          <div class="testimonial-card">
+            <svg class="quote-mark" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M3 21c3.5 0 7-2.5 7-7V3H3v11h4c0 2-1.5 4-4 4v3zm11 0c3.5 0 7-2.5 7-7V3h-7v11h4c0 2-1.5 4-4 4v3z"/>
+            </svg>
+            <div class="testimonial-stars">
+              <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+              <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+              <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+              <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+              <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            </div>
+            <p>«بسته‌بندی خیلی خوب بود و ارسال رایگان داشت. عسل چهل‌گیاه رو برای سرماخوردگی بچه‌هام استفاده می‌کنم.»</p>
+            <div class="testimonial-author">
+              <div class="testimonial-avatar">م</div>
+              <div class="testimonial-author-info">
+                <strong>مریم حسینی</strong>
+                <small>
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+                    <circle cx="12" cy="10" r="3"/>
+                  </svg>
+                  اصفهان
+                </small>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-4 reveal">
+          <div class="testimonial-card">
+            <svg class="quote-mark" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M3 21c3.5 0 7-2.5 7-7V3H3v11h4c0 2-1.5 4-4 4v3zm11 0c3.5 0 7-2.5 7-7V3h-7v11h4c0 2-1.5 4-4 4v3z"/>
+            </svg>
+            <div class="testimonial-stars">
+              <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+              <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+              <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+              <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+              <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            </div>
+            <p>«از کیفیت عسل گزنگبین و بهارنارنج خیلی راضی بودم. مشاوره‌شون هم عالی بود.»</p>
+            <div class="testimonial-author">
+              <div class="testimonial-avatar">ع</div>
+              <div class="testimonial-author-info">
+                <strong>علی کریمی</strong>
+                <small>
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+                    <circle cx="12" cy="10" r="3"/>
+                  </svg>
+                  مشهد
+                </small>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== تماس ===== -->
+  <section class="contact-section" id="contact">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-badge">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+          </svg>
+          تماس
+        </span>
+        <h2>ثبت سفارش و مشاوره</h2>
+        <p>برای ثبت سفارش یا دریافت مشاوره رایگان با ما در ارتباط باشید</p>
+      </div>
+
+      <div class="row g-4 justify-content-center">
+        <div class="col-lg-5 reveal">
+          <div class="contact-info-card">
+            <!-- 🌟 لوگوی بله در کادر سفید و رنگ عسلی -->
+            <span class="bale-icon-box size-lg">
+              <img src="https://raw.githubusercontent.com/Mohammad23tt/asal-foroush-haj-ahmad/main/New-Logo-of-Bale.svg" alt="بله">
+            </span>
+            <div>
+              <strong>ثبت سفارش در بله</strong>
+              <a href="https://ble.ir/ahmad7745" target="_blank">ahmad7745@</a>
+            </div>
+          </div>
+
+          <div class="contact-info-card">
+            <div class="icon-box">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M1 3h15v13H1z"/><path d="M16 8h4l3 3v5h-7z"/>
+                <circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/>
+              </svg>
+            </div>
+            <div>
+              <strong>ارسال</strong>
+              <span>ارسال رایگان با پست به سراسر کشور</span>
+            </div>
+          </div>
+
+          <div class="contact-info-card">
+            <div class="icon-box">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/>
+              </svg>
+            </div>
+            <div>
+              <strong>پاسخگویی</strong>
+              <span>همه روزه از ساعت ۹ صبح تا ۹ شب</span>
+            </div>
+          </div>
+
+          <div class="contact-info-card">
+            <div class="icon-box">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+              </svg>
+            </div>
+            <div>
+              <strong>مشاوره رایگان</strong>
+              <span>راهنمای انتخاب عسل بر اساس طبع شما</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-7 reveal">
+          <div class="contact-cta-card">
+            <div class="contact-cta-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+                <polyline points="22,6 12,13 2,6"/>
+              </svg>
+            </div>
+            <h3>سفارش خود را ثبت کنید</h3>
+            <p>برای ثبت سفارش کافیست به آیدی بله ما پیام دهید. کارشناسان ما در کمترین زمان سفارش شما را ثبت و ارسال می‌کنند.</p>
+            <a href="https://ble.ir/ahmad7745" target="_blank" class="btn-bale" style="height: 56px; padding: 0 var(--space-7); font-size: 1rem;">
+              <span class="bale-icon-box size-md">
+                <img src="https://raw.githubusercontent.com/Mohammad23tt/asal-foroush-haj-ahmad/main/New-Logo-of-Bale.svg" alt="بله">
+              </span>
+              ahmad7745@
+            </a>
+            <div class="trust-summary">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                <path d="M9 12l2 2 4-4"/>
+              </svg>
+              ارسال رایگان
+              <span class="divider"></span>
+              ضمانت اصالت
+              <span class="divider"></span>
+              ساکارز زیر ۳٪
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== فوتر ===== -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="row g-4">
+
+        <div class="col-md-6 col-lg-4">
+          <div class="footer-brand">
+            <span class="footer-brand-mark">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M8 3h8v2.5H8z"/>
+                <path d="M7 5.5h10c1 0 1.5.5 1.5 1.5v11c0 1.5-1 3-2.5 3h-8C6.5 21 5.5 19.5 5.5 18V7c0-1 .5-1.5 1.5-1.5z"/>
+                <path d="M7 10.5h10"/>
+                <path d="M7 14.5h10"/>
+              </svg>
+            </span>
+            <span class="footer-brand-text">
+              <strong>حاج احمد</strong>
+              <small>عسل طبیعی</small>
+            </span>
+          </div>
+          <p>عرضه‌کننده عسل طبیعی و فرآورده‌های زنبور عسل با ضمانت اصالت و کیفیت. مستقیم از کندو به سفره شما.</p>
+
+          <div class="footer-social">
+            <a href="https://ble.ir/ahmad7745" target="_blank" title="بله">
+              <!-- 🌟 لوگوی بله در کادر سفید و رنگ عسلی -->
+              <span class="bale-icon-box">
+                <img src="https://raw.githubusercontent.com/Mohammad23tt/asal-foroush-haj-ahmad/main/New-Logo-of-Bale.svg" alt="بله">
+              </span>
+            </a>
+            <a href="#" title="اینستاگرام">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/>
+                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/>
+              </svg>
+            </a>
+            <a href="#" title="واتساپ">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8z"/>
+              </svg>
+            </a>
+          </div>
+        </div>
+
+        <div class="col-6 col-md-3 col-lg-2">
+          <h5>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="m9 18 6-6-6-6"/>
+            </svg>
+            دسترسی سریع
+          </h5>
+          <ul class="footer-links">
+            <li><a href="#products"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="m15 18-6-6 6-6"/></svg> محصولات</a></li>
+            <li><a href="#order-story"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="m15 18-6-6 6-6"/></svg> پشت صحنه سفارش</a></li>
+            <li><a href="#about"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="m15 18-6-6 6-6"/></svg> درباره ما</a></li>
+            <li><a href="#contact"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="m15 18-6-6 6-6"/></svg> تماس با ما</a></li>
+          </ul>
+        </div>
+
+        <div class="col-6 col-md-3 col-lg-2">
+          <h5>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+            </svg>
+            خدمات مشتریان
+          </h5>
+          <ul class="footer-links">
+            <li><a href="#"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="m15 18-6-6 6-6"/></svg> شرایط ارسال</a></li>
+            <li><a href="#"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="m15 18-6-6 6-6"/></svg> ضمانت اصالت</a></li>
+            <li><a href="#"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="m15 18-6-6 6-6"/></svg> سوالات متداول</a></li>
+            <li><a href="#"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="m15 18-6-6 6-6"/></svg> حریم خصوصی</a></li>
+          </ul>
+        </div>
+
+        <div class="col-md-6 col-lg-4">
+          <h5>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+            </svg>
+            تماس با ما
+          </h5>
+          <ul class="footer-links">
+            <li>
+              <a href="https://ble.ir/ahmad7745" target="_blank">
+                <span class="bale-icon-box">
+                  <img src="https://raw.githubusercontent.com/Mohammad23tt/asal-foroush-haj-ahmad/main/New-Logo-of-Bale.svg" alt="بله">
+                </span>
+                ahmad7745@
+              </a>
+            </li>
+            <li><a href="#"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="m15 18-6-6 6-6"/></svg> ارسال رایگان با پست</a></li>
+            <li><a href="#"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="m15 18-6-6 6-6"/></svg> مشاوره رایگان انتخاب عسل</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- ============================================================
+           ⭐ فقط یک مجوز — مجوز رسمی کسب و کار
+           ============================================================ -->
+      <div class="trust-section">
+        <h5 class="trust-title">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+            <path d="M9 12l2 2 4-4"/>
+          </svg>
+          اعتماد و امنیت شما، اولویت ماست
+        </h5>
+
+        <div class="trust-badges-grid">
+          <!-- 🌟 تنها نماد مجوز سایت - کلیک‌پذیر -->
+          <a href="https://qr.mojavez.ir/track/I17731112" 
+             target="_blank" 
+             rel="noopener noreferrer"
+             class="trust-card license"
+             title="مشاهده و تأیید مجوز رسمی کسب و کار">
+            <div class="trust-card-icon">
+              <img src="https://raw.githubusercontent.com/Mohammad23tt/asal-foroush-haj-ahmad/main/dargah-logo.webp" 
+                   alt="نماد مجوز رسمی"
+                   onerror="this.parentElement.innerHTML='<svg viewBox=\'0 0 24 24\' fill=\'none\' stroke=\'currentColor\' stroke-width=\'2\' stroke-linecap=\'round\' stroke-linejoin=\'round\'><path d=\'M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z\'/><path d=\'M9 12l2 2 4-4\'/></svg>';">
+            </div>
+            <div class="trust-card-text">
+              <strong>مجوز رسمی کسب و کار</strong>
+              <small>برای تأیید کلیک کنید</small>
+            </div>
+            <span class="trust-card-verified">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M20 6 9 17l-5-5"/>
+              </svg>
+              تأیید شده
+            </span>
+          </a>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/>
+        </svg>
+        © ۱۴۰۳ فروشگاه حاج احمد | تمامی حقوق محفوظ است.
+      </div>
+    </div>
+  </footer>
+
+  <!-- ===== سبد خرید ===== -->
+  <div class="cart-overlay" id="cartOverlay"></div>
+  <aside class="cart-drawer" id="cartDrawer">
+    <div class="cart-header">
+      <h5>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/>
+          <path d="M3 6h18"/>
+          <path d="M16 10a4 4 0 0 1-8 0"/>
+        </svg>
+        سبد خرید
+      </h5>
+      <button class="cart-close" id="cartClose">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M18 6 6 18M6 6l12 12"/>
+        </svg>
+      </button>
+    </div>
+    <div class="cart-items" id="cartItems"></div>
+    <div class="cart-footer">
+      <div class="cart-total">
+        <span>جمع کل:</span>
+        <span class="total-price"><span id="cartTotal">۰</span> تومان</span>
+      </div>
+      <div class="cart-shipping-note">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M1 3h15v13H1z"/><path d="M16 8h4l3 3v5h-7z"/>
+          <circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/>
+        </svg>
+        ارسال رایگان با پست
+      </div>
+      <button class="btn-bale" style="width:100%;" id="checkoutBtn">
+        <span class="bale-icon-box size-sm">
+          <img src="https://raw.githubusercontent.com/Mohammad23tt/asal-foroush-haj-ahmad/main/New-Logo-of-Bale.svg" alt="بله">
+        </span>
+        ثبت سفارش در بله
+      </button>
+    </div>
+  </aside>
+
+  <!-- ===== دکمه بازگشت به بالا ===== -->
+  <button class="back-to-top" id="backToTop">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+      <path d="m18 15-6-6-6 6"/>
+    </svg>
+  </button>
+
+  <!-- ===== توست ===== -->
+  <div class="toast-notification" id="toast">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+      <path d="M22 4 12 14.01l-3-3"/>
+    </svg>
+    <span id="toastMsg">محصول اضافه شد</span>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+  <script>
+    const productIcons = {
+      honey: `<svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M22 8h20v6H22z"/>
+        <path d="M20 14h24c2 0 3 1 3 3v34c0 3-2 6-5 6H22c-3 0-5-3-5-6V17c0-2 1-3 3-3z"/>
+        <path d="M18 28h28M18 38h28"/></svg>`,
+      thyme: `<svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M32 56V8"/>
+        <path d="M32 16c-6-3-10-3-14 2M32 16c6-3 10-3 14 2"/>
+        <path d="M32 26c-6-3-10-3-14 2M32 26c6-3 10-3 14 2"/>
+        <path d="M32 36c-6-3-10-3-14 2M32 36c6-3 10-3 14 2"/>
+        <path d="M32 46c-6-3-10-3-14 2M32 46c6-3 10-3 14 2"/></svg>`,
+      mountain: `<svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M6 52h52L38 20 26 36l-8-10z"/>
+        <path d="M38 20l-6-4-4 6"/>
+        <circle cx="48" cy="16" r="3"/></svg>`,
+      flower: `<svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="32" cy="26" r="6"/>
+        <path d="M32 8v10M32 34v10M20 26h-10M52 26H42"/>
+        <path d="M23.5 17.5 16 10M40.5 17.5 48 10M23.5 34.5 16 42M40.5 34.5 48 42"/>
+        <path d="M32 44v14"/></svg>`,
+      orange: `<svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="32" cy="38" r="16"/>
+        <path d="M32 22V10"/>
+        <path d="M32 14c4-4 8-4 12 0-4 4-8 4-12 0z"/></svg>`,
+      wildflower: `<svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="32" cy="32" r="5"/>
+        <ellipse cx="32" cy="20" rx="4" ry="6"/>
+        <ellipse cx="32" cy="44" rx="4" ry="6"/>
+        <ellipse cx="20" cy="32" rx="6" ry="4"/>
+        <ellipse cx="44" cy="32" rx="6" ry="4"/>
+        <ellipse cx="23" cy="23" rx="4" ry="4"/>
+        <ellipse cx="41" cy="23" rx="4" ry="4"/>
+        <ellipse cx="23" cy="41" rx="4" ry="4"/>
+        <ellipse cx="41" cy="41" rx="4" ry="4"/></svg>`
+    };
+
+    const products = [
+      { id: 1, name: 'عسل گزنگبین', price: 1697000, category: 'بدون موم', iconKey: 'honey', desc: 'عسل گزنگبین خالص با طعم و عطر بی‌نظیر از کندوهای کوهستانی', saccharose: '۱٪', wax: false, badge: 'پرفروش' },
+      { id: 2, name: 'عسل آویشن', price: 2197000, category: 'بدون موم', iconKey: 'thyme', desc: 'عسل آویشن معطر با خواص درمانی فراوان', saccharose: '۱٪', wax: false, badge: 'ویژه' },
+      { id: 3, name: 'عسل کوهستان', price: 1427000, category: 'بدون موم', iconKey: 'mountain', desc: 'عسل کوهستان طبیعی از ارتفاعات بکر', saccharose: 'زیر ۳٪', wax: false, badge: '' },
+      { id: 4, name: 'عسل چهل‌گیاه (موم‌دار)', price: 1427000, category: 'موم‌دار', iconKey: 'wildflower', desc: 'عسل چهل‌گیاه طبیعی همراه با موم، سرشار از خواص', saccharose: 'زیر ۳٪', wax: true, badge: 'موم‌دار' },
+      { id: 5, name: 'عسل بهارنارنج', price: 1797000, category: 'بدون موم', iconKey: 'orange', desc: 'عسل بهارنارنج با عطر دل‌انگیز شکوفه‌های نارنج', saccharose: '—', wax: false, badge: 'معطر' },
+      { id: 6, name: 'عسل چهل گیاه', price: 1127000, category: 'بدون موم', iconKey: 'flower', desc: 'عسل چهل گیاه اقتصادی با کیفیت مطلوب', saccharose: '—', wax: false, badge: 'اقتصادی' }
+    ];
+
+    let cart = JSON.parse(localStorage.getItem('hajAhmadCart')) || [];
+    const productGrid = document.getElementById('productGrid');
+    const cartCount = document.getElementById('cartCount');
+    const cartItems = document.getElementById('cartItems');
+    const cartTotal = document.getElementById('cartTotal');
+    const cartDrawer = document.getElementById('cartDrawer');
+    const cartOverlay = document.getElementById('cartOverlay');
+    const toast = document.getElementById('toast');
+    const toastMsg = document.getElementById('toastMsg');
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImage = document.getElementById('lightboxImage');
+    const lightboxClose = document.getElementById('lightboxClose');
+
+    function toFa(num) { return num.toLocaleString('fa-IR'); }
+
+    function showToast(msg) {
+      toastMsg.textContent = msg;
+      toast.classList.add('show');
+      setTimeout(() => toast.classList.remove('show'), 2500);
+    }
+
+    function openLightbox(src) {
+      lightboxImage.src = src;
+      lightbox.classList.add('active');
+      document.body.style.overflow = 'hidden';
+    }
+    function closeLightbox() {
+      lightbox.classList.remove('active');
+      document.body.style.overflow = '';
+    }
+    lightboxClose.addEventListener('click', closeLightbox);
+    lightbox.addEventListener('click', (e) => { if (e.target === lightbox) closeLightbox(); });
+
+    function renderProducts(filter = 'all') {
+      const filtered = filter === 'all' ? products : products.filter(p => p.category === filter);
+      productGrid.innerHTML = filtered.map(p => `
+        <div class="col-sm-6 col-lg-4">
+          <div class="product-card">
+            ${p.badge ? `<span class="product-badge ${p.wax ? 'wax' : ''}">${p.badge}</span>` : ''}
+            <div class="product-image-wrapper">
+              <div class="product-svg-icon">${productIcons[p.iconKey] || productIcons.honey}</div>
+            </div>
+            <h5>${p.name}</h5>
+            ${p.saccharose !== '—' ? `
+              <div class="product-specs">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+                  <path d="M22 4 12 14.01l-3-3"/>
+                </svg>
+                ساکارز: ${p.saccharose}
+              </div>
+            ` : ''}
+            <div class="product-desc">${p.desc}</div>
+            <div class="product-price">${toFa(p.price)} <small>تومان / کیلو</small></div>
+            <button class="btn-add-cart" onclick="addToCart(${p.id})">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/>
+                <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/>
+              </svg>
+              افزودن به سبد
+            </button>
+          </div>
+        </div>
+      `).join('');
+    }
+
+    function addToCart(id) {
+      const existing = cart.find(item => item.id === id);
+      if (existing) existing.qty++;
+      else cart.push({ id, qty: 1 });
+      saveCart();
+      updateCartUI();
+      showToast('محصول به سبد خرید اضافه شد');
+    }
+    function removeFromCart(id) {
+      cart = cart.filter(item => item.id !== id);
+      saveCart();
+      updateCartUI();
+    }
+    function changeQty(id, delta) {
+      const item = cart.find(item => item.id === id);
+      if (!item) return;
+      item.qty += delta;
+      if (item.qty <= 0) removeFromCart(id);
+      else { saveCart(); updateCartUI(); }
+    }
+    function saveCart() { localStorage.setItem('hajAhmadCart', JSON.stringify(cart)); }
+
+    function updateCartUI() {
+      const count = cart.reduce((sum, item) => sum + item.qty, 0);
+      cartCount.textContent = toFa(count);
+
+      if (cart.length === 0) {
+        cartItems.innerHTML = `
+          <div class="cart-empty">
+            <div class="cart-empty-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/>
+                <path d="M3 6h18"/><path d="M16 10a4 4 0 0 1-8 0"/>
+              </svg>
+            </div>
+            <p>سبد خرید شما خالی است.</p>
+          </div>
+        `;
+        cartTotal.textContent = '۰';
+        return;
+      }
+
+      let total = 0;
+      cartItems.innerHTML = cart.map(item => {
+        const product = products.find(p => p.id === item.id);
+        if (!product) return '';
+        total += product.price * item.qty;
+        return `
+          <div class="cart-item">
+            <div class="cart-item-icon">${productIcons[product.iconKey] || productIcons.honey}</div>
+            <div class="cart-item-info">
+              <h6>${product.name}</h6>
+              <div class="cart-item-price">${toFa(product.price)} تومان</div>
+              <div class="cart-qty">
+                <button onclick="changeQty(${item.id}, 1)">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg>
+                </button>
+                <span>${toFa(item.qty)}</span>
+                <button onclick="changeQty(${item.id}, -1)">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M5 12h14"/></svg>
+                </button>
+                <button class="cart-remove" onclick="removeFromCart(${item.id})">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="3 6 5 6 21 6"/>
+                    <path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/>
+                  </svg>
+                  حذف
+                </button>
+              </div>
+            </div>
+          </div>
+        `;
+      }).join('');
+      cartTotal.textContent = toFa(total);
+    }
+
+    function openCart() {
+      cartDrawer.classList.add('active');
+      cartOverlay.classList.add('active');
+      document.body.style.overflow = 'hidden';
+    }
+    function closeCart() {
+      cartDrawer.classList.remove('active');
+      cartOverlay.classList.remove('active');
+      document.body.style.overflow = '';
+    }
+
+    document.getElementById('cartBtn').addEventListener('click', openCart);
+    document.getElementById('cartClose').addEventListener('click', closeCart);
+    cartOverlay.addEventListener('click', closeCart);
+
+    document.getElementById('checkoutBtn').addEventListener('click', () => {
+      if (cart.length === 0) { showToast('سبد خرید خالی است!'); return; }
+      const total = cart.reduce((sum, item) => {
+        const p = products.find(pr => pr.id === item.id);
+        return sum + (p ? p.price * item.qty : 0);
+      }, 0);
+      const lines = cart.map(item => {
+        const p = products.find(pr => pr.id === item.id);
+        return `▪️ ${p.name} × ${item.qty} کیلو = ${toFa(p.price * item.qty)} تومان`;
+      }).join('\n');
+      const msg = `🍯 سفارش جدید از فروشگاه حاج احمد\n\n${lines}\n\n━━━━━━━━━━━━━━\n💰 جمع کل: ${toFa(total)} تومان\n🚚 ارسال رایگان با پست`;
+      window.open('https://ble.ir/ahmad7745?text=' + encodeURIComponent(msg), '_blank');
+      showToast('سفارش شما آماده ارسال است');
+    });
+
+    document.querySelectorAll('.filter-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        renderProducts(btn.dataset.filter);
+      });
+    });
+
+    document.getElementById('menuToggle').addEventListener('click', () => {
+      document.getElementById('navLinks').classList.toggle('open');
+    });
+    document.querySelectorAll('.nav-links a').forEach(link => {
+      link.addEventListener('click', () => {
+        document.getElementById('navLinks').classList.remove('open');
+      });
+    });
+
+    const themeToggle = document.getElementById('themeToggle');
+    const themeIcon = document.getElementById('themeIcon');
+
+    function setTheme(theme) {
+      document.documentElement.setAttribute('data-theme', theme);
+      localStorage.setItem('hajAhmadTheme', theme);
+      themeIcon.innerHTML = theme === 'dark'
+        ? '<circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/>'
+        : '<path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>';
+    }
+
+    themeToggle.addEventListener('click', () => {
+      const current = document.documentElement.getAttribute('data-theme');
+      setTheme(current === 'dark' ? 'light' : 'dark');
+    });
+    setTheme(localStorage.getItem('hajAhmadTheme') || 'light');
+
+    const siteHeader = document.getElementById('siteHeader');
+    window.addEventListener('scroll', () => {
+      siteHeader.classList.toggle('scrolled', window.scrollY > 50);
+      document.getElementById('backToTop').classList.toggle('show', window.scrollY > 500);
+    });
+
+    document.getElementById('backToTop').addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+
+    function animateCounters() {
+      document.querySelectorAll('.counter-num').forEach(el => {
+        if (el.dataset.animated) return;
+        const rect = el.getBoundingClientRect();
+        if (rect.top < window.innerHeight - 100) {
+          el.dataset.animated = 'true';
+          const target = parseInt(el.dataset.target);
+          let current = 0;
+          const step = Math.ceil(target / 60);
+          const timer = setInterval(() => {
+            current += step;
+            if (current >= target) { current = target; clearInterval(timer); }
+            el.textContent = toFa(current);
+          }, 25);
+        }
+      });
+    }
+
+    function revealOnScroll() {
+      document.querySelectorAll('.reveal').forEach(el => {
+        const rect = el.getBoundingClientRect();
+        if (rect.top < window.innerHeight - 80) el.classList.add('visible');
+      });
+    }
+
+    window.addEventListener('scroll', () => {
+      animateCounters();
+      revealOnScroll();
+    });
+
+    window.addEventListener('load', () => {
+      setTimeout(() => {
+        document.getElementById('preloader').classList.add('hide');
+      }, 800);
+    });
+
+    renderProducts();
+    updateCartUI();
+    animateCounters();
+    revealOnScroll();
+  </script>
+</body>
+</html>
